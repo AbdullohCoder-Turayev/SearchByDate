@@ -3,32 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Show Users</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 <body>
-<h1>Choose the date:</h1>
-<form>
-    <form th:action= "@{/search}" method = "get">
-        <label>Date: </label>
-        <input type="date" id="date" name="searchDate">
 
-        <button type="submit">Search</button>
+<div>
+    <h1>Choose the date:</h1>
+    <form>
+        <form th:action= "@{/search}" method = "get">
+            <label>Date: </label>
+            <input type="date" id="date" name="searchDate">
+
+            <button type="submit">Search</button>
+        </form>
     </form>
-</form>
 
-<h1>List of Users</h1>
-<table border="1">
-    <tr>
-        <th>Name</th>
-        <th>Age</th>
-        <th>Date</th>
-    </tr>
+</div>
 
-    <tr th:each="user : ${users}">
-        <td th:text="${user.name}"> </td>
-        <td th:text="${user.age}"> </td>
-        <td th:text="${#dates.format(user.date, 'yyyy-MM-dd')}"> </td>
-    </tr>
-</table>
+<div>
+    <h1>List of Users</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Date</th>
+        </tr>
+
+        <tr th:each="user : ${users}">
+            <td th:text="${user.name}"> </td>
+            <td th:text="${user.age}"> </td>
+            <td th:text="${#dates.format(user.date, 'yyyy-MM-dd')}"> </td>
+        </tr>
+    </table>
+</div>
 
 <a href="#" th:href="@{/main}">Go Back To The Main Page</a>
 </body>

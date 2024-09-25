@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Main Page</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 <body>
   <h1>Choose the action: </h1>
 
-  <a href="#" th:href="@{/users/show-all}">Show The List Of All Users</a>
+  <a href="#" class="liquid" th:href="@{/users/show-all}">Show The List Of All Users</a>
   <a href="#" th:href="@{/users/show}">Search User By Date</a>
   <a href="#" th:href="@{/users/delete}">Delete User By ID</a>
   <a href="#" th:href="@{/users/save}">Save The New User</a>

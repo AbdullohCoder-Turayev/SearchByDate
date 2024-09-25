@@ -3,11 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <title>Saving the user info</title>
+  <link rel="stylesheet" th:href="@{/style.css}" />
 </head>
 <body>
   <form th:action= "@{/save}" th:object="${user}" method = "post">
     <label>Name: </label>
     <input type="text" name="name">
+
+    <br>
 
     <label>Age: </label>
     <input type="number" name="age">
