@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
     @Autowired
-    UserRepo userRepo;
+    private UserRepo userRepo;
 
     public void deleteById(Long id) {
         userRepo.deleteById(id);

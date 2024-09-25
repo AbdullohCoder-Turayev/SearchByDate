@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -125,5 +122,12 @@ public class UserController {
         model.addAttribute("users", _users);
 
         return "show";
+    }
+
+    @GetMapping("/users/{id}")
+    public String delete(@PathVariable Long id){
+        userService.deleteById(id);
+
+        return "redirect:/show";
     }
 }
