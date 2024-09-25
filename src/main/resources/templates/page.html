@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Saving the user info</title>
+</head>
+<body>
+  <form th:action= "@{/save}" th:object="${user}" method = "post">
+    <label>Name: </label>
+    <input type="text" name="name">
+
+    <label>Age: </label>
+    <input type="number" name="age">
+
+    <label>Date: </label>
+    <input type="date" name="date">
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
