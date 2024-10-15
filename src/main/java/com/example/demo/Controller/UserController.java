@@ -98,7 +98,7 @@ public class UserController {
         return "show-all";
     }
 
-    @GetMapping("/main")
+    @GetMapping("/home")
     public String showMain(){
 
         return "main";
